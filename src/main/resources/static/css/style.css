@@ -1,0 +1,83 @@
+
+
+.boxP{
+    
+    height: 550px;
+    display: flex;
+    
+}
+
+.margin{
+
+       display: flex;
+        flex-direction: column;
+        margin-left: 70px;
+        margin-top: 15px;
+        font-weight: 500;
+
+}
+
+.titulo{
+
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.form-control{
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.card{
+    background-color: rgb(245, 237, 191);
+}
+
+.listaD{
+
+    width: 25px;
+}
+
+
+
+body{
+     background-color: rgb(242, 240, 240);
+}
+
+span{
+
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.principal{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labels{
+    display: flex;
+    justify-content: center;
+}
+
+.containerB{
+
+    display: flex;
+    justify-content: center;
+    
+    margin-bottom: 9px;
+}
+
+.botao{
+
+    width: 120px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 15px;
+    color: black;
+    font-weight: 500;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta charset="UTF-8">
+    <title>CADASTRO</title>
+</head>
+
+<body>
+<table>
+    <tbody>
+    <tr th:each="prod: ${allProducts}">
+        <td th:text="${prod.name}">Oranges</td>
+        <td th:text="${#numbers.formatDecimal(prod.price,1, 2)}">0.99</td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+<form action="/Produto" method="POST">
+
+
+
+    <div class="container">
+
+        <div class="card ">
+
+
+            <div class="card-header tux-titulo-panel">
+                <span class=" titulo ">Cadastre seu item</span>
+            </div>
+
+            <div class="alert alert-success alert-dismissible" role="alert" th:if="${!#strings.isEmpty(mensagem)}">
+
+                <button type="button" class="close " data-dismiss="alert"></button>
+                <span th:text="${mensagem}">Salvo com sucesso</span>
+            </div>
+
+            <div class="card-body principal">
+                <div class="form-group text-center">
+                    <label for="Produto" class="">
+                       <strong>Produto</strong>
+                    </label>
+
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="produto" placeholder="" name="produto">
+                    </div>
+                </div>
+
+
+
+                <div class="form-group text-center">
+                    <label for="Descricao" aria-required="true" class="">
+                            <strong>Descrição<strong>
+                    </label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="descricao" name="descricao">
+                    </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <label for="Instrucao" aria-required="true" class=" col-md-label">
+                        <strong>Instrução de Uso</strong>
+                    </label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="instrucao" name="instrucao">
+                    </div>
+                </div>
+
+                <div class="form-group text-center ">
+                    <label for="valor" class=" col-sm-label">
+                        <strong>Valor</strong>
+                    </label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="Valor" name="valor">
+                    </div>
+
+                </div>
+
+                <div class="text-center">
+                    <label for="valor" class="">
+                        <strong>Disponibilidade</strong>
+                    </label>
+
+                    <div class="">
+                        <select class="col-sm-12 form-control"  id="status" name="status">
+                            <option th:each="status : ${disponibilidade}" th:value="${status}"
+                                    th:text="${status.descricao}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="containerB">
+
+
+                <button type="submit" class="btn-info botao">Salvar</button>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </div>
+    </div>
+
+
+    </div>
+
+</form>
+
+
+<script src="/js/jQuery-v3.4.1.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
